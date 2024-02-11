@@ -1,0 +1,7 @@
+
+/* tracking protection (just the icon!) gone */
+
+#tracking-protection-icon-container {
+    max-width: 0px !important;
+    display: none !important;
+}
