@@ -1,0 +1,13 @@
+
+/* Menu button gone */
+
+#PanelUI-menu-button {
+	display: none !important;
+}
+
+/* Extensions button moved *//*
+#unified-extensions-button {
+	display: block;
+	position: fixed;
+	right: 41px;
+}*/

@@ -1,0 +1,21 @@
+
+/* Import theme */
+@import url(toolbars.css);
+@import url(hide_tabs_scrollbuttons.css);
+@import url(urlbar.css);
+@import url(tab-mechanics.css);
+@import url(tab-theme.css);
+@import url(icons.css);
+
+@import url(hide-hamburger-menu.css);
+@import url(hide-tracking-protection.css);
+
+/* Choose one or the other or none */
+@import url(csd.css);
+/* @import url(csd-left.css); */
+/* @import url(csd-gnome.css); */
+
+/* rounded corners for border of web content */
+#appcontent browser {
+    border-radius: 6px !important;
+}
