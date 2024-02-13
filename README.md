@@ -43,7 +43,7 @@ Mac (CSD left):
 
 ## Installation:
 
-- Download and extract Xenofox.zip
+- Download and extract Xenofox-main.zip
 
 - Type "about:support" in the Firefox URL bar to go to Firefox's support page
 
@@ -55,7 +55,7 @@ Mac (CSD left):
 
 ![screenshot of profile directory button](screenshots/Screenshot_profile_directory.png)
 
-- Go to where you extracted Xenofox.zip. Copy the "chrome" folder and the "user.js" file to your Firefox profile folder. This step is complete when you have a file named "user.js" and a folder named "chrome" (that contains the theme's components) in your Firefox Profile folder
+- Go to where you extracted Xenofox-main.zip. Copy the "chrome" folder and the "user.js" file to your Firefox profile folder. This step is complete when you have a file named "user.js" and a folder named "chrome" (that contains the theme's components) in your Firefox Profile folder
 
 - Restart Firefox
 
