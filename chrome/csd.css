@@ -1,0 +1,129 @@
+
+/* Client-Side Decoration window controls */
+
+/* GNOME users may want to adjust the values indicated with comments, to have the placement of these buttons match your other apps (window controls are provided by the GTK theme on GNOME). For window controls on the left, follow the instructions in comments */
+
+/* Without modification, the window controls appear in the tab bar, which is unfortunate when the tab bar is below the toolbar. This file positions the window controls in the top right, shortens the toolbar to account for the space they take, and orders the window control buttons as expected. */
+
+@media (-moz-gtk-csd-available) {
+    :root:is([tabsintitlebar]) {
+
+        #navigator-toolbox:not([inFullscreen]) #TabsToolbar .titlebar-buttonbox-container {
+            visibility: visible !important;
+            display: flex !important;
+            position: absolute !important;
+            top: 9px; /* GNOME users with an alternative theme may want to adjust this value */
+            right: 0px; /* GNOME users with an alternative theme may want to adjust this value. To have window controls on the left, replace "right" with "left" */
+        }
+
+        /* shortens the toolbar to accommodate the absolute positioning of the csd window controls */
+        #nav-bar {
+            padding-right: 111px !important; /* GNOME users with an alternative theme may want to adjust this value. To have window controls on the left, replace "padding-right" with "padding-left" */
+        }
+
+        /* add space above toolbar */
+        #navigator-toolbox {
+            padding-top: 2px !important;
+        }
+
+        /* remove extra window controls in menubar */
+        #titlebar #toolbar-menubar .titlebar-buttonbox-container {
+            display: none !important;
+        }
+
+        /* window control button order */
+        .titlebar-min {
+            order: 0 !important; /* To have window controls on the left, change this from "0" to "2" */
+        }
+
+        .titlebar-max, .titlebar-restore {
+            order: 1 !important;
+        }
+
+        .titlebar-close {
+            order: 2 !important; /* To have window controls on the left, change this from "2" to "0" */
+        }
+    }
+}
+
+@media (-moz-platform-win10), (-moz-platform-win11) {
+    :root:is([tabsintitlebar]) {
+
+        #navigator-toolbox:not([inFullscreen]) #TabsToolbar .titlebar-buttonbox-container {
+            visibility: visible !important;
+            display: flex !important;
+            position: absolute !important;
+            top: 0px;
+            right: 0px;
+        }
+
+        /* shortens the toolbar to accommodate the absolute positioning of the csd window controls */
+        #nav-bar {
+            padding-right: 150px !important;
+        }
+
+        /* add space above toolbar */
+        #navigator-toolbox {
+            padding-top: 2px !important;
+        }
+
+        /* remove extra window controls in menubar */
+        #titlebar #toolbar-menubar .titlebar-buttonbox-container {
+            display: none !important;
+        }
+
+        /* window control button order */
+        .titlebar-min {
+            order: 0 !important;
+        }
+
+        .titlebar-max, .titlebar-restore {
+            order: 1 !important;
+        }
+
+        .titlebar-close {
+            order: 2 !important;
+        }
+    }
+}
+
+@media (-moz-platform-macos) {
+    :root:is([tabsintitlebar]) {
+
+        #navigator-toolbox:not([inFullscreen]) #TabsToolbar .titlebar-buttonbox-container {
+            visibility: visible !important;
+            display: flex !important;
+            position: absolute !important;
+            top: 14px;
+            left: 0px;
+        }
+
+        /* shortens the toolbar to accommodate the absolute positioning of the csd window controls */
+        #nav-bar {
+            padding-left: 66px !important;
+        }
+
+        /* add space above toolbar */
+        #navigator-toolbox {
+            padding-top: 2px !important;
+        }
+
+        /* remove extra window controls in menubar */
+        #titlebar #toolbar-menubar .titlebar-buttonbox-container {
+            display: none !important;
+        }
+
+        /* window control button order */
+        .titlebar-min {
+            order: 2 !important;
+        }
+
+        .titlebar-max, .titlebar-restore {
+            order: 1 !important;
+        }
+
+        .titlebar-close {
+            order: 0 !important;
+        }
+    }
+}

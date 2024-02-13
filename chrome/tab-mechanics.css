@@ -1,0 +1,229 @@
+
+/* New Tab page background, white flash avoidance */
+#tabbrowser-tabpanels, #tabbrowser-tabpanels[pendingpaint] {
+  background-color: #1a1a1a !important;
+}
+
+/* ##### Tab mechanics ##### */
+
+/* Tabs positioned under the navigator container */
+#titlebar {
+	order: 3 !important;
+}
+
+#titlebar #tabbrowser-tabs {
+  padding-top: 0 !important;
+  margin-top: -3px !important;
+}
+
+/* Tabs max-width across the browser window */
+.tabbrowser-tab[fadein]:not([pinned]) {
+	max-width: 50vw !important;
+}
+
+#tabbrowser-tabs {
+  padding-inline-start: 3px !important;
+  padding-inline-end: 3px !important;
+}
+
+/* Active tab min width */
+.tabbrowser-tab[selected]:not([pinned], [movingtab]) {
+    min-width: 252px !important; /* 14vw */
+}
+
+/* Widen on hover, only when overflowed */
+#tabbrowser-tabs[overflow] .tabbrowser-tab:not([selected], [movingtab], [pinned]):hover {
+    min-width: 144px !important; /* 8vw */
+}
+
+/* Container tabs line size and position */
+.tab-context-line {
+    order: 2 !important;
+    width: 16px !important;
+    height: 2px !important;
+    margin-inline: 8px !important;
+    margin-bottom: 3px !important;
+}
+
+/* Remove extra space on tab bar edges */
+.titlebar-spacer {
+    display: none !important;
+}
+
+/* ##### Hover tab and favicon changes to close button - on left ##### */
+
+/* Favicons always visible (also on hover) */
+.tab-icon-image:not([pinned]) {
+    opacity: 1 !important;
+}
+
+.tab-icon-stack {
+	margin-inline-start: 1px !important;
+    margin-inline-end: 2px !important;
+}
+
+/* keep the site favicon in its usual position instead of being displaced by the speaker icon */
+.tab-icon-stack:is([soundplaying], [muted], [activemedia-blocked]) > .tab-icon-image {
+	position: relative;
+}
+
+/* get rid of the PLAYING, MUTED, etc. labels on audio tabs */
+.tab-secondary-label:is([soundplaying], [muted], [activemedia-blocked], [pictureinpicture]) {
+    display: none !important;
+}
+
+/* make the speaker icon always appear if the tab is playing (not only on hover) */
+.tab-icon-overlay:not([sharing], [crashed]):is([soundplaying], [muted], [activemedia-blocked]) {
+	/* Color */
+	color: currentColor !important;
+    fill: #dddddd !important;
+	stroke: transparent !important;
+	background: transparent !important;
+	fill-opacity: 0.9 !important;
+	opacity: 1 !important;
+
+	/* Position */
+    /*z-index: 1 !important; */
+
+    /* Shape
+    padding: 1.5px !important;
+    width: 22px !important;
+    height: 22px !important; */
+
+    /* Animation */
+    transition: 0.1s var(--animation-easing-function);
+}
+
+
+/* reposition the tab label and speaker icon */
+.tab-icon-overlay:not([pinned], [sharing], [crashed]):is([soundplaying], [muted], [activemedia-blocked]) {
+	left: 6px !important;
+	bottom: 5px !important;
+    padding-right: 0 !important;
+}
+
+/* Replace favicon with close button on selected tab on hover */
+/* First, hide the close button when not selected and hovered */
+
+.tabbrowser-tab .tab-close-button {
+    visibility: collapse;
+    display:none !important;
+    border-radius: 9999px !important;
+}
+
+/* Then, show tab close button in place of favicon when cursor is over the selected tab */
+
+.tabbrowser-tab[selected]:not([pinned]):hover .tab-icon-image { visibility: hidden; display: none; }
+.tabbrowser-tab[selected]:not([pinned]):hover .tab-icon-overlay{ visibility: hidden; display: none;  }
+.tabbrowser-tab[selected]:not([pinned]):hover .tab-close-button {
+    display: flex !important;
+    visibility: visible;
+    order: -1 !important;
+    align-items: center;
+    z-index: 1;
+    margin-inline: -3px 0px !important;
+    /*margin-inline-end: 6px !important;*/
+
+}
+.tabbrowser-tab[selected]:not([pinned]):hover .tab-close-button{ margin-inline-end: 0 !important; }
+
+/* positioning correction when media playing */
+@media (-moz-proton){
+  .tab-close-button{
+    margin-inline: -3px 0px !important;
+    padding-inline-start: 7px !important;
+  }
+}
+
+/* If no favicon - No icon - show close-button when cursor is over the tab */
+.tab-icon-stack:hover ~ .tab-close-button,
+.tab-close-button:hover,
+.tabbrowser-tab:not([image]):hover .tab-close-button{ visibility: visible; z-index: 1;  }
+.tabbrowser-tab:not([image]):hover .tab-close-button{ margin-inline-end: 0 !important; }
+
+/* Center the the text of the tab label */
+.tab-label-container {
+  display: grid !important;
+  align-content: center !important;
+}
+.tab-secondary-label {
+  justify-content: center !important;
+}
+.tab-label,.tab-secondary-label {
+  overflow: hidden;
+}
+.tab-label-container {
+  padding-top: 0 !important;
+  margin-top: -1px !important;
+}
+
+/* Remove right and left side tab overflow border line */
+#scrollbutton-up ~ spacer {
+  border-color: transparent !important;
+}
+
+/* Hide tabs scrollbuttons in a manner that preserves the ability to move tab strip when reordering tabs *//*
+#tabbrowser-tabs:not([movingtab]){ --uc-scroll-visibility: hidden }
+#tabbrowser-tabs[overflow]{ --uc-scrollbox-margin: -31px }
+#scrollbutton-up{ position: relative;z-index: 1 }
+#scrollbutton-up,
+#scrollbutton-down,
+#scrollbutton-up ~ spacer{
+  visibility: var(--uc-scroll-visibility,visible);
+  fill: #1a1a1a !important;
+}
+.scrollbox-clip{ margin-inline: var(--uc-scrollbox-margin,0px); }*/
+
+/* ########## !!!!!!!! Hides the tab bar with only one tab !!!!!!!! ############# */
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/hide_tabs_with_one_tab.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* Makes tabs toolbar items zero-height initially and sets enlarge them to fill up space equal to tab-min-height set on tabs. Optionally use privatemode_indicator_as_menu_button.css to replace main menu icon with private browsing indicator while tabs are hidden. */
+/* Firefox 65+ only */
+
+/* All tabs button gone */
+#alltabs-button {
+	/*list-style-image: url(icons/pan-down.svg) !important;*/
+	display: none !important;
+}
+
+:root[sizemode="normal"] #nav-bar{ --uc-window-drag-space-width: 20px }
+
+#TabsToolbar{ min-height: 0px !important }
+
+#tabbrowser-tabs, #tabbrowser-arrowscrollbox{ min-height: 0 !important; }
+
+/*#tabbrowser-tabs, #tabbrowser-tabs > .tabbrowser-arrowscrollbox, #tabbrowser-arrowscrollbox{ min-height: 0 !important; }
+
+:root:not([customizing]) #tabbrowser-tabs .tabs-newtab-button,
+:root:not([customizing]) #tabs-newtab-button,
+:root:not([customizing]) #TabsToolbar-customization-target > .toolbarbutton-1,
+:root:not([customizing]) #TabsToolbar .titlebar-button{
+  -moz-appearance: none !important;
+  height: 0px;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  -moz-box-align: stretch;
+  margin: 0px !important;
+}*/
+
+.accessibility-indicator,
+.private-browsing-indicator{
+  height: unset !important;
+}
+.accessibility-indicator > hbox{ padding-block: 0 !important }
+
+/*#tabbrowser-tab .tabbrowser-tab[first-visible-tab="true"][last-visible-tab="true"]{
+  visibility: collapse !important;
+}*/
+
+.tabbrowser-tab{
+  height: calc(var(--tab-min-height) + 2 * var(--tab-block-margin,0px));
+}
+
+.tabbrowser-tab:only-of-type,
+.tabbrowser-tab[first-visible-tab="true"][last-visible-tab="true"]{
+  visibility: collapse !important;
+  min-height: 0 !important;
+  height: 0;
+}
