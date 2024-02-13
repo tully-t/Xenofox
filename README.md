@@ -24,6 +24,7 @@ Xenofox is a dark, colorful theme for Firefox with tab management enhancements. 
 - Matching New Tab/Top Sites page theme
 - Hidden Application (hamburger) menu (optional)
 - Modularity! Comment and uncomment lines in userChrome.css to enable or disable features
+- Responsiveness! The theme detects your OS and provides the expected window controls
 
 Tabs:
 
