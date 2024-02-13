@@ -49,13 +49,13 @@ Mac (CSD left):
 
 - Click "Open Directory" ("Open Folder" on Windows) next to the "Profile Directory" ("Profile Folder" on Windows) label to open your Firefox Profile folder.
 
-        Linux: `~/.mozilla/firefox/######.default-release/`
-        Windows: `C:\Users\[USERNAME]\AppData\Roaming\Mozilla\Firefox\Profiles\######.default-release`
-        Mac: `Users/[USERNAME]/Library/Application Support/Firefox/Profiles/######.default-release`
+        Linux: ~/.mozilla/firefox/######.default-release/
+        Windows: C:\Users\[USERNAME]\AppData\Roaming\Mozilla\Firefox\Profiles\######.default-release
+        Mac: Users/[USERNAME]/Library/Application Support/Firefox/Profiles/######.default-release
 
 ![screenshot of profile directory button](screenshots/Screenshot_profile_directory.png)
 
-- Go to where you extracted Xenofox.zip. Open the folder that corresponds to your OS (i.e. Xenofox-Linux for Linux users). Copy the "chrome" folder and the "user.js" file to your Firefox profile folder. This step is complete when you have a file named "user.js" and a folder named "chrome" (that contains the theme's components) in your Firefox Profile folder
+- Go to where you extracted Xenofox.zip. Copy the "chrome" folder and the "user.js" file to your Firefox profile folder. This step is complete when you have a file named "user.js" and a folder named "chrome" (that contains the theme's components) in your Firefox Profile folder
 
 - Restart Firefox
 
