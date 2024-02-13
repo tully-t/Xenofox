@@ -52,8 +52,8 @@
             visibility: visible !important;
             display: flex !important;
             position: absolute !important;
-            top: 14px;
-            left: 0px;
+            top: 14px !important;
+            left: 0px !important;
         }
 
         /* shortens the toolbar to accommodate the absolute positioning of the csd window controls */
