@@ -1,0 +1,93 @@
+
+/* scrollbar colors: scrollbar trough; */
+* {
+    /*scrollbar-width: thin !important; */
+	scrollbar-color: #aaaaac48 #1a1a1a33 !important;
+}
+
+/* no white flash */
+@-moz-document url("about:newtab"), url("about:home") {
+	body {
+		background: #1a1a1a !important;
+	}
+
+/* top sites/homepage theme */
+	:root {
+	--primary-color: #BBBBBB;
+	--border-color: #8500ff;
+	--bg: #1a1a1a;
+	--bg-op: #1a1a1a;
+	--card-op: rgba(170, 170, 172, 0.3);
+}
+
+	.outer-wrapper {
+	--newtab-background-color-secondary: #aaaaac48;
+	--newtab-background-color: #1a1a1a;
+	--newtab-text-primary-color: #BBBBBB;
+	--newtab-primary-action-background: #1a1a1a;
+	--newtab-primary-action-background-pocket: #8500ff;
+	--newtab-text-secondary-color: #BBBBBB;
+	--newtab-element-hover-color:  #8500ff;
+	--newtab-element-secondary-color: #8500ff;
+	--newtab-element-secondary-hover-color: #aaaaac30;
+	--newtab-element-secondary-active-color: #aaaaac30;
+	--newtab-border-color: transparent;
+	--newtab-button-secondary-color: #1a1a1a;
+	--newtab-primary-element-text-color: #aaaaac;
+  }
+
+    .top-site-inner .tile {
+		background: rgba(170, 170, 172, 0.2) !important;
+	}
+
+	.top-site-outer .title span {
+		color: #BBBBBB !important;
+		/*font-size: 12pt !important;
+		font-weight: bold !important;*/
+		text-shadow: 0px 1px 2px rgba(0, 0, 0, .5) !important;
+	}
+
+	.top-site-outer .tile {
+		background-color: var(--card-op) !important;
+		/*backdrop-filter: blur(10px) !important;*/
+	}
+
+	.top-sites .top-site-outer .top-site-inner > a:is(.active, :focus) .tile {
+		box-shadow: none !important;
+	}
+
+	.top-site-outer .top-site-icon {
+      background-color: transparent !important;
+    }
+
+	.top-sites-list:not(.dnd-active) .top-site-outer:is(.active, :focus, :hover) {
+		background: #aaaaac30 !important; /*transparent*/
+	}
+
+	.top-site-outer .context-menu-button {
+		fill: var(--primary-color) !important;
+	}
+
+	.top-site-outer .context-menu {
+		background: #1a1a1a !important;
+		border: solid 2px transparent !important;
+		background-image: linear-gradient(#1a1a1a, #1a1a1a), radial-gradient(circle at left, #00ddff, #8500ff) !important;
+		background-origin: border-box !important;
+		background-clip: padding-box, border-box !important;
+		border-radius: 6px !important;
+		box-shadow: none !important;
+		outline: none !important;
+	}
+
+	.top-sites-list:not(.dnd-active) .top-site-outer:is(:hover) .title span {
+		/*opacity: .7 !important;*/
+        color: #dddddd !important;
+	}
+
+    .personalize-button {
+      fill: #BBBBBB !important;
+    }
+
+	.personalize-button:hover {
+		background-color: #aaaaac30 !important;
+	}

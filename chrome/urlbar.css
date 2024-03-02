@@ -1,0 +1,152 @@
+
+/* ###### Center text in the url bar ###### */
+#urlbar:not([focused]) .urlbar-input-box {
+	text-align: center !important;
+}
+
+/* add padding for URL bar placeholder text */
+#urlbar:is([focused]):not([usertyping],[searchmode]) .urlbar-input-box {
+    padding-inline-start: 0px !important;
+    margin-inline-start: 4px !important;
+}
+
+/* padding when typing */
+#urlbar:is([usertyping],[searchmode]) .urlbar-input-box {
+    margin-inline-start: 3px !important;
+}
+
+/* URL bar item colors */
+#urlbar .urlbar-input-box {
+	color: #BBBBBB !important;
+}
+#urlbar:hover .urlbar-input-box, #urlbar[focused] .urlbar-input-box, #urlbar[open] .urlbar-input-box {
+	color: #DDDDDD !important;
+}
+
+#urlbar:hover, #urlbar[focused], #urlbar[open] {
+    color: #DDDDDD !important;
+}
+
+.urlbarView-url {
+    color: rgba(170, 170, 172, 0.84) !important;
+    font-size: 11pt !important;
+}
+
+.icon-bookmark-added {
+      fill: #bbbbbb !important;
+}
+
+#popup_text {
+	color: #bbbbbb !important;
+}
+#popup_text:hover {
+	color: #dddddd !important;
+}
+#PlacesToolbar .bookmark-item {
+    color: #bbbbbb !important;
+}
+#PlacesToolbar .bookmark-item:hover {
+    color: #dddddd !important;
+}
+#PlacesToolbar .bookmark-item:open {
+    color: #dddddd !important;
+}
+#urlbar #star-button {
+    color: #dddddd !important;
+}
+
+#urlbar #star-button:is([starred]) {
+    fill: #bbbbbb !important;
+}
+
+#urlbar-engine-one-off-item-bookmarks {
+    fill: #bbbbbb !important;
+}
+
+#page-action-buttons {
+    /*margin-inline-start: calc(-15px - 2 * var(--urlbar-icon-padding) ) !important;*/
+    color: #dddddd !important;
+}
+
+/* Hide 'this time, search with' in url dropdown */
+.search-panel-one-offs-header.search-panel-header {
+    display: none !important ;
+}
+
+/* Hide page actions (bookmark star  & zoom), show them on hover */
+#page-action-buttons, .urlbar-page-action {
+    /*margin-inline-end: calc(-16px - 2 * var(--urlbar-icon-padding) );*/
+    max-width: 0px;
+    opacity: 0;
+    transition: /*margin-inline 75ms linear,*/ max-width 100ms linear, opacity 200ms linear;
+}
+
+#urlbar:hover #page-action-buttons, #urlbar:hover .urlbar-page-action,
+.urlbar-page-action[open],
+.urlbar-page-action[open] ~ .urlbar-page-action {
+    opacity: 1;
+    max-width: 100px !important; /*32*/
+}
+
+#urlbar:is([focused]) #page-action-buttons, #urlbar:is([focused]) .urlbar-page-action,
+.urlbar-page-action[open],
+.urlbar-page-action[open] ~ .urlbar-page-action {
+    opacity: 1;
+    max-width: 100px !important; /*32*/
+}
+
+/* Hide magnifying glass search icon */
+#urlbar[pageproxystate='invalid'] #identity-box, #urlbar-search-button, #identity-icon-box {
+    max-width: 0px;
+    display: none !important;
+}
+
+/* Show icons on hover, hide first */
+#tracking-protection-icon-container, #identity-box, #identity-permission-box, #notification-popup-box, #reader-mode-button, #remote-control-box, #urlbar:is([focused]) #identity-box, #urlbar:is([focused]) #identity-permission-box, #urlbar:is([focused]) #notification-popup-box {
+    color: #dddddd !important;
+    opacity: 0;
+    max-width: 0px;
+    transition: max-width 100ms linear, opacity 200ms linear !important;
+}
+ /* show on hover */
+#urlbar:hover #identity-box, #urlbar:hover #identity-permission-box, #urlbar:hover #notification-popup-box, #urlbar:hover #identity-icon-box, #urlbar:hover #remote-control-box, #urlbar:hover #tracking-protection-icon-container{
+    opacity: 1;
+    max-width: 75px;
+}
+
+
+/* ##### URL bar theme ###### */
+
+/*#urlbar-container:hover .urlbar-background, #urlbar-input-container > box:hover {
+	background-color: rgba(170, 170, 172, 0.3) !important;
+}*/
+
+#urlbar-background {
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+#urlbar-background {
+    min-height: 22px;
+}
+
+#urlbar:not([focused], [open="true"], [inactive]) #urlbar-background {
+	background-color: rgba(170, 170, 172, 0.2) !important;
+    border-radius: 6px !important;
+    border: solid 2px #1a1a1a !important;
+}
+
+#urlbar:not([focused], [open="true"]):hover #urlbar-background {
+	border-color: rgba(170, 170, 172, 0.3) !important;
+}
+
+#urlbar[open] > #urlbar-background, #urlbar[focused] > #urlbar-background {
+	color: #DDDDDD !important;
+    border: solid 2px transparent !important;
+    background-image: linear-gradient(#1a1a1a, #1a1a1a), radial-gradient(circle at top left, #00ddff, #8500ff) !important;
+    background-origin: border-box !important;
+    background-clip: padding-box, border-box !important;
+    border-radius: 6px !important;
+    box-shadow: none !important;
+    outline: none !important;
+}

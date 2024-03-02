@@ -1,0 +1,161 @@
+@namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+:root {
+--lwt-accent-color: rgb(26, 26, 26);
+--chrome-content-separator-color: transparent;
+--panel-separator-color: transparent;
+}
+
+#sidebar-splitter {
+    color: #1a1a1a !important;
+    border-color: #1a1a1a !important;
+}
+
+/* status panel in lower left dark theme */
+#statuspanel-label{
+  background-color: #1a1a1a !important;
+  color: #bbbbbb !important;
+  border-color: transparent !important;
+}
+
+/* ########### toolbar theme ########### */
+
+#nav-bar {
+    background-color: #1a1a1a !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+#PersonalToolbar {
+    background-color: #1a1a1a !important;
+    border-color: none !important;
+    border-bottom: none !important;
+}
+
+#navigator-toolbox, #navigator-toolbox-background {
+    border: none !important;
+    background-color: #1a1a1a !important;
+    /*border-bottom: solid 2px #1a1a1a;*/
+}
+
+/*place toolbar buttons at edge of window */
+#nav-bar-customization-target > :is(toolbarbutton, toolbaritem):first-child {
+    padding-inline-start: 4px !important;
+  }
+#nav-bar-customization-target > :is(toolbarbutton, toolbaritem):last-child {
+    padding-inline-end: 4px !important;
+  }
+
+/* space below the titlebar, possibly helpful for SSD/Aurorae window decorations other than Xeno */
+/*#navigator-toolbox {
+    padding-top: 2px !important;
+}*/
+
+/* ########### button theme ########### */
+
+/* toolbar button dimensions */
+.toolbarbutton-1 .toolbarbutton-icon, .toolbarbutton-badge-stack {
+	border: solid 2px transparent !important;
+	border-radius: 6px !important;
+    background-clip: border-box !important;
+	padding: 6px !important;
+	width: 34px !important;
+	height: 34px !important;
+}
+
+.toolbarbutton-1, #PlacesToolbar .bookmark-item:not(subviewbutton) {
+    border: solid 2px transparent !important;
+    border-radius: 6px !important;
+}
+
+.toolbarbutton-1:is([open]) > .toolbarbutton-icon, #downloads-button:is([open]) .toolbarbutton-badge-stack, #PanelUI-menu-button:is([open]) .toolbarbutton-badge-stack {
+    color: #DDDDDD !important;
+    background: transparent !important;
+    border: solid 2px transparent !important;
+    background-image: linear-gradient(#1a1a1a, #1a1a1a), radial-gradient(circle at top left, #00ddff, #8500ff) !important;
+    background-origin: border-box !important;
+    background-clip: padding-box, border-box !important;
+    border-radius: 6px !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+/* ##### Hamburger menu ##### */
+:root {
+    --panel-separator-zap-gradient: linear-gradient(90deg, #00ddff 0%, #8500ff 90%, #8500ff 100%) !important;
+    --toolbarbutton-outer-padding: 0 !important;
+}
+
+/* position at edge of window */
+#PanelUI-menu-button {
+    padding-inline-end: 4px !important;
+}
+
+/* sizing like other toolbar buttons */
+#PanelUI-menu-button .toolbarbutton-badge-stack {
+    padding-inline-start: 0px !important;
+    padding-inline-end: 0px !important;
+
+  border: solid 2px transparent !important;
+  border-radius: 6px !important;
+  padding: 0px !important;
+  background-clip: border-box !important;
+  width: 34px !important;
+  height: 34px !important;
+}
+
+#PanelUI-menu-button .toolbarbutton-icon {
+    margin-left: -2px;
+    margin-top: -2px;
+}
+
+/* ########### bookmark bar theme ########### */
+
+#PlacesToolbar .bookmark-item:not(subviewbutton):hover {
+	color: #DDDDDD !important;
+    background-color: rgba(170, 170, 172, 0.2) !important;
+}
+
+#PlacesToolbar .bookmark-item:not(subviewbutton) {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+/* bookmark chevron */
+#PlacesToolbar .toolbarbutton-1 .toolbarbutton-icon {
+    padding:  3px !important; /* to prevent shrinking */
+    width: 26px !important;
+	height: 26px !important;
+}
+
+#PlacesToolbar .toolbarbutton-1 {
+	margin: 0 !important;
+}
+
+#PlacesToolbar .toolbarbutton-1:is([open]) > .toolbarbutton-icon {
+    padding: 3px !important;
+}
+
+/* bookmarks toolbar */
+#PersonalToolbar {
+	min-height: 32px !important; /* correction for 'show only on new tab' */
+	margin: -1px 0 0 0 !important; /* position at window edge like tab bar and toolbar */
+	padding-bottom: 2px !important;
+}
+
+#PlacesToolbar .bookmark-item:is([open]):not(subviewbutton) {
+    color: #DDDDDD !important;
+    background: transparent !important;
+    border: solid 2px transparent !important;
+    background-image: linear-gradient(#1a1a1a, #1a1a1a), radial-gradient(circle at top left, #00ddff, #8500ff) !important;
+    background-origin: border-box !important;
+    background-clip: padding-box, border-box !important;
+    border-radius: 6px !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+/* the gradient on warnings like 'you must log in to this network...' */
+.container.infobar::before {
+    background-image: linear-gradient(0deg, #8500ff 0%, #8500ff 10%, #00ddff 100%) !important;
+  }
