@@ -15,19 +15,17 @@ See the above repository for updates as well as full license text. */
   --uc-scrollbox-base-margin: -31px;
   --uc-scrollbox-margin: calc(var(--uc-scrollbox-base-margin) + var(--tab-shadow-max-size));
 }
-#tabbrowser-arrowscrollbox:not([scrolledtostart="true"]){
+#tabbrowser-arrowscrollbox:not([scrolledtostart]){
   --uc-scrollbox-overflow-start-margin: -1px;
 }
 #scrollbutton-up ~ spacer{
   visibility: visible !important;
 }
 spacer[part="overflow-start-indicator"]{
-  -moz-box-ordinal-group: 0; /* Fx < 112 compatibility */
   order: -1;
   margin-inline-start: var(--uc-scrollbox-overflow-start-margin,-0.5px) !important;
 }
 spacer[part="overflow-end-indicator"]{
-  -moz-box-ordinal-group: 2; /* Fx < 112 compatibility */
   order: 2;
 }
 
@@ -35,6 +33,7 @@ spacer[part="overflow-end-indicator"]{
 #scrollbutton-up[disabled="true"] > .toolbarbutton-icon{
   opacity: 0.4;
 }
+
 #scrollbutton-up,
 #scrollbutton-down{
   position: relative;
@@ -45,15 +44,20 @@ spacer[part="overflow-end-indicator"]{
   background-repeat: no-repeat !important;
   opacity: 1 !important;
 }
+
 #scrollbutton-up{
   margin-inline-start: calc(0px - var(--tab-shadow-max-size,0px)) !important;
   background-image: var(--uc-scrollbutton-up-background);
 }
+
 #scrollbutton-down{
   margin-inline-end: calc(0px - var(--tab-shadow-max-size,0px)) !important;
   background-image: var(--uc-scrollbutton-down-background);
 }
+
+scrollbox[orient="horizontal"],
 .scrollbox-clip{ margin-inline: var(--uc-scrollbox-margin,0px); }
+.scrollbox-clip > scrollbox[orient="horizontal"]{ margin-inline: initial }
 
 /* Need to reset some things for other scrollboxes */
 .menupopup-arrowscrollbox{

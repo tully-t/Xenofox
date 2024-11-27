@@ -13,27 +13,27 @@
 
 /* top sites/homepage theme */
 	:root {
-	--primary-color: #BBBBBB;
-	--border-color: #8500ff;
-	--bg: #1a1a1a;
-	--bg-op: #1a1a1a;
-	--card-op: rgba(170, 170, 172, 0.3);
+		--primary-color: #BBBBBB;
+		--border-color: #aaaaac;
+		--bg: #1a1a1a;
+		--bg-op: #1a1a1a;
+		--card-op: rgba(170, 170, 172, 0.3);
 }
 
 	.outer-wrapper {
-	--newtab-background-color-secondary: #aaaaac48;
-	--newtab-background-color: #1a1a1a;
-	--newtab-text-primary-color: #BBBBBB;
-	--newtab-primary-action-background: #1a1a1a;
-	--newtab-primary-action-background-pocket: #8500ff;
-	--newtab-text-secondary-color: #BBBBBB;
-	--newtab-element-hover-color:  #8500ff;
-	--newtab-element-secondary-color: #8500ff;
-	--newtab-element-secondary-hover-color: #aaaaac30;
-	--newtab-element-secondary-active-color: #aaaaac30;
-	--newtab-border-color: transparent;
-	--newtab-button-secondary-color: #1a1a1a;
-	--newtab-primary-element-text-color: #aaaaac;
+		--newtab-background-color-secondary: #aaaaac48;
+		--newtab-background-color: #1a1a1a;
+		--newtab-text-primary-color: #BBBBBB;
+		--newtab-primary-action-background: #1a1a1a;
+		--newtab-primary-action-background-pocket: #8500ff;
+		--newtab-text-secondary-color: #BBBBBB;
+		--newtab-element-hover-color:  #8500ff;
+		--newtab-element-secondary-color: #8500ff;
+		--newtab-element-secondary-hover-color: #aaaaac30;
+		--newtab-element-secondary-active-color: #aaaaac30;
+		--newtab-border-color: transparent;
+		--newtab-button-secondary-color: #1a1a1a;
+		--newtab-primary-element-text-color: #aaaaac;
   }
 
     .top-site-inner .tile {

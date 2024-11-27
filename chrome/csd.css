@@ -6,9 +6,9 @@
 
 /* Without modification, the window controls appear in the tab bar, which is unfortunate when the tab bar is below the toolbar. This file positions the window controls in the top right, shortens the toolbar to account for the space they take, and orders the window control buttons as expected. */
 
-:root:is([tabsintitlebar]) { /* Windows */
+:root:is([tabsintitlebar]) {        /* Windows */
 
-        #navigator-toolbox:not([inFullscreen]) #TabsToolbar .titlebar-buttonbox-container {
+        .titlebar-buttonbox-container {
             visibility: visible !important;
             display: flex !important;
             position: absolute !important;
@@ -17,7 +17,7 @@
         }
 
         /* shortens the toolbar to accommodate the absolute positioning of the csd window controls */
-        #nav-bar {
+            #nav-bar {
             padding-right: 150px !important;
         }
 
@@ -27,8 +27,8 @@
         }
 
         /* remove extra window controls in menubar */
-        #titlebar #toolbar-menubar .titlebar-buttonbox-container {
-            display: none !important;
+        #TabsToolbar .titlebar-buttonbox-container {
+        display: none !important;
         }
 
         /* window control button order */
@@ -43,12 +43,12 @@
         .titlebar-close {
             order: 2 !important;
         }
-}
+    }
 
 @media (-moz-platform: macos) {
     :root:is([tabsintitlebar]) {
 
-        #navigator-toolbox:not([inFullscreen]) #TabsToolbar .titlebar-buttonbox-container {
+        .titlebar-buttonbox-container {
             visibility: visible !important;
             display: flex !important;
             position: absolute !important;
@@ -67,8 +67,8 @@
         }
 
         /* remove extra window controls in menubar */
-        #titlebar #toolbar-menubar .titlebar-buttonbox-container {
-            display: none !important;
+        #TabsToolbar .titlebar-buttonbox-container {
+        display: none !important;
         }
 
         /* window control button order */
@@ -89,27 +89,27 @@
 @media (-moz-gtk-csd-available) {
     :root:is([tabsintitlebar]) {
 
-        #navigator-toolbox:not([inFullscreen]) #TabsToolbar .titlebar-buttonbox-container {
+        .titlebar-buttonbox-container {
             visibility: visible !important;
             display: flex !important;
             position: absolute !important;
-            top: 9px !important; /* GNOME users with an alternative theme may want to adjust this value */
-            right: 0px !important; /* GNOME users with an alternative theme may want to adjust this value. To have window controls on the left, replace "right" with "left" */
+            top: 8px !important; /* GNOME users with an alternative theme may want to adjust this value */
+            right: 6px !important; /* GNOME users with an alternative theme may want to adjust this value. To have window controls on the left, replace "right" with "left" */
         }
 
         /* shortens the toolbar to accommodate the absolute positioning of the csd window controls */
         #nav-bar {
-            padding-right: 111px !important; /* GNOME users with an alternative theme may want to adjust this value. To have window controls on the left, replace "padding-right" with "padding-left" */
-        }
+            padding-right: 110px !important; /* GNOME users with an alternative theme may want to adjust this value. To have window controls on the left, replace "padding-right" with "padding-left" */
+            }
 
         /* add space above toolbar */
         #navigator-toolbox {
             padding-top: 2px !important;
         }
 
-        /* remove extra window controls in menubar */
-        #titlebar #toolbar-menubar .titlebar-buttonbox-container {
-            display: none !important;
+        /* remove extra window controls */
+        #TabsToolbar .titlebar-buttonbox-container {
+        display: none !important;
         }
 
         /* window control button order */
