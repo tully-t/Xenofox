@@ -66,6 +66,8 @@ order: 3 !important;
     margin-inline-end: 2px !important;
 }
 
+/* Now Playing icon for tabs playing media */
+
 /* keep the site favicon in its usual position instead of being displaced by the speaker icon */
 .tab-icon-stack:is([soundplaying], [muted], [activemedia-blocked]) > .tab-icon-image {
 	position: relative;
@@ -102,15 +104,15 @@ order: 3 !important;
 
 
 /* reposition the tab label and speaker icon */
-.tab-icon-overlay:not([pinned], [crashed]):is([soundplaying], [muted], [activemedia-blocked]), [sharing] {
+.tab-icon-overlay:not([pinned], [sharing], [crashed]):is([soundplaying], [muted], [activemedia-blocked]) {
 	left: 6px !important;
 	bottom: 5px !important;
     padding-right: 0 !important;
 }
 
 /* Replace favicon with close button on selected tab on hover */
-/* First, hide the close button when not selected and hovered */
 
+/* First, hide the close button when not selected and hovered */
 .tabbrowser-tab .tab-close-button {
     visibility: collapse;
     display:none !important;
@@ -118,7 +120,6 @@ order: 3 !important;
 }
 
 /* Then, show tab close button in place of favicon when cursor is over the selected tab */
-
 .tabbrowser-tab[selected]:not([pinned]):hover .tab-icon-image { visibility: hidden; display: none; }
 .tabbrowser-tab[selected]:not([pinned]):hover .tab-icon-overlay{ visibility: hidden; display: none;  }
 .tabbrowser-tab[selected]:not([pinned]):hover .tab-close-button {
