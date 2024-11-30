@@ -6,6 +6,10 @@
 
 /* Without modification, the window controls appear in the tab bar, which is unfortunate when the tab bar is below the toolbar. This file positions the window controls in the top right, shortens the toolbar to account for the space they take, and orders the window control buttons as expected. */
 
+        #toolbar-menubar .titlebar-buttonbox-container {
+            display: none !important;
+        }
+
 :root:is([tabsintitlebar]) {        /* Windows */
 
         .titlebar-buttonbox-container {
