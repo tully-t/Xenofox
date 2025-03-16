@@ -86,8 +86,8 @@ Mac:
 ### To finish applying the theme:
 
 - Right-click the toolbar and select "Customize Toolbar" to enter Customization mode
-- Move the Firefox View button and the List All Tabs button off of the tab bar. Removing these buttons, or moving them to the toolbar, enables the tab bar to hide with only one tab. See Notes for further explanation
-- Move the New Tab button from the tab bar to the right edge of the toolbar. Moving the New Tab button to the toolbar enables the tab bar to hide with only one tab. See Notes for further explanation
+- Move the Firefox View button and the List All Tabs button off of the tab bar. Removing these buttons, or moving them to the toolbar, enables the tab bar to hide with only one tab
+- Move the New Tab button from the tab bar to the right edge of the toolbar. Moving the New Tab button to the toolbar enables the tab bar to hide with only one tab. See Options for further explanation
 - KDE users: To have a titlebar, check the "Title Bar" checkbox in the lower-left. Consider disabling rounded corners for web content. See Notes for further explanation
 
 ![Screenshot of freshly configured profile with Xenofox theme](preview/2.png "The above steps have been followed and the rounded corners option has been disabled")
