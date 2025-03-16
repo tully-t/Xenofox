@@ -1,0 +1,5 @@
+
+/* Set corners for border of web content, avoids conflict with decoration box-shadow, adjustable */
+browser {
+    border-radius: 9px 9px 12px 12px !important;
+}

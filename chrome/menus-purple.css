@@ -1,0 +1,227 @@
+/* ##### Menu theme ##### */
+
+:root {
+    --panel-background: #151515f2 !important;
+    --arrowpanel-background: #151515f2 !important;
+    --background-canvas-color: #1a1a1a !important;
+    --panel-border-color: transparent !important;
+    --arrowpanel-border-color: transparent !important;
+    --arrowpanel-border-radius: 6px !important;
+    --panel-border-radius: 6px !important;
+}
+
+/* Context menu and panel popup padding */
+popupset menupopup, #placesContext, .textbox-contextmenu {
+    --arrowpanel-padding: 8px !important;
+    --panel-padding: 8px !important;
+    --panel-shadow-margin: 11px !important;
+    --background-canvas-color: #151515f2 !important;
+}
+
+/* Hide extra 'Manage bookmarks' entry in bookmarks menu */
+#BMB_bookmarksShowAll {
+    display: none !important;
+}
+
+.hide-if-empty-places-result {
+    display: none !important;
+}
+
+/* ##### Menuitem theme ##### */
+menuitem:hover, menuitem[_moz-menuactive], menu[_moz-menuactive] {
+    background-color: rgba(170, 170, 172, 0.2) !important;
+}
+
+/* ##### Menu glow ##### */
+arrowscrollbox {
+    appearance: none !important;
+    border: none !important;
+    outline: none !important;
+    background: #151515f2 !important;
+    --panel-shadow-margin: 18px !important;
+    --panel-shadow:
+
+    0 0 2px 2px rgba(133, 0, 255, 0.36), 0 0 3px 4px rgba(116, 68, 255, 0.12), 0 0 3px 6px rgba(116, 68, 255, 0.07),
+
+    0 0 15px 3px rgba(101, 68, 255, 0.27), 0 0 9px 2px rgba(116, 68, 255, 0.56),
+
+    0 8px 6px 3px rgba(101, 68, 255, 0.06), 0 -8px 6px 3px rgba(101, 68, 255, 0.06), 8px 0 6px 3px rgba(101, 68, 255, 0.06), -8px 0 6px 3px rgba(101, 68, 255, 0.06)
+
+     !important;
+}
+
+panel:not([remote]) {
+    border: none !important;
+    border-radius: 6px !important;
+    outline: none !important;
+    --panel-shadow-margin: 18px !important;
+    --panel-shadow:
+
+    0 0 2px 2px rgba(133, 0, 255, 0.36), 0 0 3px 4px rgba(116, 68, 255, 0.12), 0 0 3px 6px rgba(116, 68, 255, 0.07),
+
+    0 0 15px 3px rgba(101, 68, 255, 0.27), 0 0 9px 2px rgba(116, 68, 255, 0.56),
+
+    0 8px 6px 3px rgba(101, 68, 255, 0.06), 0 -8px 6px 3px rgba(101, 68, 255, 0.06), 8px 0 6px 3px rgba(101, 68, 255, 0.06), -8px 0 6px 3px rgba(101, 68, 255, 0.06)
+
+    !important;
+
+}
+
+/* ##### Bookmarks menu padding ##### */
+#BMB_bookmarksPopup, #sidebarMenu-popup, #PlacesToolbar menupopup {
+    appearance: none !important;
+    border: none !important;
+    outline: none !important;
+    --panel-shadow-margin: 18px !important;
+    --arrowpanel-padding: 8px 0px !important;
+    --panel-padding: 8px 0px !important;
+}
+
+menupopup[placespopup="true"] .menupopup-arrowscrollbox {
+    padding-left: -2px !important;
+    padding-right: -2px !important;
+}
+
+menupopup[placespopup="true"] {
+    --panel-shadow-margin: 11px !important;
+    /*--panel-padding: 0px !important;*/
+}
+
+menupopup.toolbar-menupopup[placespopup="true"] {
+    --arrowpanel-padding: 8px !important;
+    --panel-padding: 8px !important;
+}
+
+/* ##### Hide separators ##### */
+menuseparator, toolbarseparator {
+    border: none !important;
+    color: transparent !important;
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+#PlacesToolbar menupopup[placespopup="true"] menuseparator {
+    border: none !important;
+    padding: 0 !important;
+}
+
+/* ##### Hamburger menu separator ##### */
+:root {
+    --panel-separator-zap-gradient: linear-gradient(90deg, #00ddee 0%, #7244ff 90%, #7244ff 100%) !important;
+    --toolbarbutton-outer-padding: 0 !important;
+}
+
+/* ##### Extensions panel theme ##### */
+#unified-extensions-panel #unified-extensions-view {
+    width: 100% !important;
+}
+
+#unified-extensions-view {
+    padding: 6px !important;
+    --uei-icon-size: 18px !important; /*  Change icon size 22px, 17+34 */
+    --firefoxcss-number-of-extensions-in-a-row: 4; /*  Increase to the number of icons you want in one row */
+}
+
+#unified-extensions-view .panel-header,
+#unified-extensions-view .panel-header + toolbarseparator,
+#unified-extensions-view .panel-subview-body + toolbarseparator,
+#unified-extensions-view #unified-extensions-manage-extensions,
+#unified-extensions-view .unified-extensions-item-menu-button.subviewbutton,
+#unified-extensions-view .unified-extensions-item-action-button .unified-extensions-item-contents {
+    display:none !important;
+}
+
+/*#unified-extensions-view .panel-subview-body {
+    padding: 6px !important;
+}*/
+
+#unified-extensions-view .unified-extensions-item .unified-extensions-item-icon,
+#unified-extensions-view .unified-extensions-item .toolbarbutton-badge-stack {
+    margin-inline-end: 0px !important;
+}
+
+#unified-extensions-view .unified-extensions-item, #unified-extensions-view .unified-extensions-item-action-button {
+    max-width: 34px !important;
+    max-height: 34px !important;
+}
+
+#unified-extensions-view .unified-extensions-item .toolbarbutton-badge-stack {
+    padding-left: 0px !important;
+    margin-left: -2px !important;
+}
+/*#unified-extensions-view .unified-extensions-item .toolbarbutton-badge-stack .toolbarbutton-icon*/
+
+#unified-extensions-view #overflowed-extensions-list,
+#unified-extensions-view #unified-extensions-area,
+#unified-extensions-view .unified-extensions-list {
+    display: grid !important;
+    grid-template-columns: repeat(var(--firefoxcss-number-of-extensions-in-a-row),auto);
+    justify-items:left !important;
+    align-items:left !important;
+}
+
+#unified-extensions-view .unified-extensions-list {
+    max-width: max-content;
+}
+
+#unified-extensions-view #unified-extensions-area {
+    /*padding-bottom: 3px !important;*/
+    border-bottom: transparent !important;
+}
+
+/*#unified-extensions-view .unified-extensions-list {     border-top: 1px solid #aeaeae33 !important; }*/
+
+#unified-extensions-view:is(panelview, #widget-overflow-fixed-list) .toolbaritem-combined-buttons {
+    margin: 1px !important;
+}
+
+/* ##### Tab Previews and tooltips ##### */
+#tab-preview-panel {
+    border: none !important;
+    border-radius: 6px !important;
+    outline: none !important;
+    --panel-shadow-margin: 18px !important;
+    --panel-shadow:
+
+    0 0 2px 2px rgba(1, 1, 1, 0.48), 0 0 4px 4px rgba(1, 1, 1, 0.36), 0 0 3px 6px rgba(1, 1, 1, 0.21),
+
+    0 0 15px 3px rgba(187, 187, 187, 0.27), 0 0 9px 2px rgba(187, 187, 187, 0.56),
+
+    0 8px 6px 3px rgba(187, 187, 187, 0.06), 0 -8px 6px 3px rgba(187, 187, 187, 0.06), 8px 0 6px 3px rgba(187, 187, 187, 0.06), -8px 0 6px 3px rgba(187, 187, 187, 0.06)
+
+    !important;
+}
+
+tooltip {
+    background-color: #151515f2 !important;
+    border: none !important;
+    border-radius: 4px !important;
+    padding: 8px !important;
+}
+
+/* Ctrl+F panel */
+findbar {
+    border-top: #1a1a1a !important;
+    outline: none !important;
+}
+
+.findbar-textbox {
+    border: solid 2px transparent !important;
+    border-radius: 6px !important;
+    background-color: rgba(170, 170, 172, 0.2) !important;
+    color: #dddddd !important;
+    padding: 4px 6px !important;
+}
+
+/* Hide side panel divider */
+#sidebar-splitter {
+    color: #1a1a1a !important;
+    border-color: #1a1a1a !important;
+}
+
+/* status panel in lower left dark theme */
+#statuspanel-label {
+    background-color: #1a1a1a !important;
+    color: #bbbbbb !important;
+    border-color: transparent !important;
+}

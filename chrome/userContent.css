@@ -1,8 +1,8 @@
 
-/* scrollbar colors: scrollbar trough; */
+/* scrollbar colors format: slider trough; */
 * {
     /*scrollbar-width: thin !important; */
-	scrollbar-color: #aaaaac48 #1a1a1a33 !important;
+	scrollbar-color: #aaaaac48 #1a1a1af2 !important;
 }
 
 /* no white flash */
@@ -25,10 +25,10 @@
 		--newtab-background-color: #1a1a1a;
 		--newtab-text-primary-color: #BBBBBB;
 		--newtab-primary-action-background: #1a1a1a;
-		--newtab-primary-action-background-pocket: #8500ff;
+		--newtab-primary-action-background-pocket: #6444ff;
 		--newtab-text-secondary-color: #BBBBBB;
-		--newtab-element-hover-color:  #8500ff;
-		--newtab-element-secondary-color: #8500ff;
+		--newtab-element-hover-color:  #6444ff;
+		--newtab-element-secondary-color: #6444ff;
 		--newtab-element-secondary-hover-color: #aaaaac30;
 		--newtab-element-secondary-active-color: #aaaaac30;
 		--newtab-border-color: transparent;
@@ -68,20 +68,60 @@
 		fill: var(--primary-color) !important;
 	}
 
-	.top-site-outer .context-menu {
-		background: #1a1a1a !important;
-		border: solid 2px transparent !important;
-		background-image: linear-gradient(#1a1a1a, #1a1a1a), radial-gradient(circle at left, #00ddff, #8500ff) !important;
-		background-origin: border-box !important;
-		background-clip: padding-box, border-box !important;
-		border-radius: 6px !important;
-		box-shadow: none !important;
-		outline: none !important;
+	.context-menu-item {
+		padding: 4px 8px !important;
 	}
+
+	.context-menu-item button {
+		border-radius: 3px !important;
+	}
+
+	.top-site-outer .context-menu {
+		background-color: #151515f2 !important;
+		border: none !important;
+		outline: none !important;
+		--arrowpanel-padding: 8px !important;
+		--panel-padding: 8px !important;
+		--panel-shadow-margin: 18px !important;
+		box-shadow:
+
+		0 0 2px 2px rgba(255, 200, 0, 0.36), 0 0 3px 4px rgba(170, 255, 0, 0.12), 0 0 3px 6px rgba(170, 255, 0, 0.07),
+
+		0 0 15px 3px rgba(0, 255, 21, 0.27), 0 0 9px 2px rgba(0, 255, 21, 0.56),
+
+		0 8px 6px 3px rgba(0, 255, 21, 0.06), 0 -8px 6px 3px rgba(0, 255, 21, 0.06), 8px 0 6px 3px rgba(0, 255, 21, 0.06), -8px 0 6px 3px rgba(0, 255, 21, 0.06)
+
+		!important;
+	}
+
+	/**** !!!!! Purple menu glow for Top Site cards context menu !!!!! ****/
+	/**** To activate, comment out the above .top-site-outer .context-menu{} section and uncomment the .top-site-outer .context-menu{} section below ****/
+
+	/*.top-site-outer .context-menu {
+		background-color: #151515f2 !important;
+		border: none !important;
+		outline: none !important;
+		--arrowpanel-padding: 8px !important;
+		--panel-padding: 8px !important;
+		--panel-shadow-margin: 18px !important;
+		box-shadow:
+
+		0 0 2px 2px rgba(133, 0, 255, 0.36), 0 0 3px 4px rgba(116, 68, 255, 0.12), 0 0 3px 6px rgba(116, 68, 255, 0.07),
+
+		0 0 15px 3px rgba(101, 68, 255, 0.27), 0 0 9px 2px rgba(116, 68, 255, 0.56),
+
+		0 8px 6px 3px rgba(101, 68, 255, 0.06), 0 -8px 6px 3px rgba(101, 68, 255, 0.06), 8px 0 6px 3px rgba(101, 68, 255, 0.06), -8px 0 6px 3px rgba(101, 68, 255, 0.06)
+
+		!important;
+	}*/
 
 	.top-sites-list:not(.dnd-active) .top-site-outer:is(:hover) .title span {
 		/*opacity: .7 !important;*/
         color: #dddddd !important;
+	}
+
+	.ds-card-topic {
+		background: #1a1a1ada !important;
 	}
 
     .personalize-button {

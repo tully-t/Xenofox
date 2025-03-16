@@ -1,0 +1,37 @@
+/* Hidden context menu entries */
+
+#context-inspect-a11y {
+    display: none !important;
+}
+
+#context-take-screenshot {
+    display: none !important;
+}
+
+#context-sep-screenshots {
+    display: none !important;
+}
+
+#context-savepage {
+    display: none !important;
+}
+
+#context-selectall {
+    display: none !important;
+}
+
+#context-sep-selectall {
+    display: none !important;
+}
+
+#context-pocket {
+    display: none !important;
+}
+
+#context-savelinktopocket {
+    display: none !important;
+}
+
+#context-savelink {
+    display: none !important;
+}

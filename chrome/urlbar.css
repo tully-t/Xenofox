@@ -1,10 +1,10 @@
 
-/* ###### Center text in the url bar ###### */
+/* ###### Center text in the urlbar ###### */
 #urlbar:not([focused]) .urlbar-input-box {
 	text-align: center !important;
 }
 
-/* add padding for URL bar placeholder text */
+/* add padding for urlbar placeholder text */
 #urlbar:is([focused]):not([usertyping],[searchmode]) .urlbar-input-box {
     padding-inline-start: 0px !important;
     margin-inline-start: 4px !important;
@@ -13,6 +13,11 @@
 /* padding when typing */
 #urlbar:is([usertyping],[searchmode]) .urlbar-input-box {
     margin-inline-start: 3px !important;
+}
+
+/* Fix for container tab context indicator in urlbar */
+#userContext-icons {
+    margin-inline-start: -6px !important;
 }
 
 /* URL bar item colors */
@@ -140,10 +145,21 @@
 	border-color: rgba(170, 170, 172, 0.3) !important;
 }
 
-#urlbar[open] > #urlbar-background, #urlbar[focused] > #urlbar-background {
+#urlbar[focused] > #urlbar-background {
+    color: #DDDDDD !important;
+    border: solid 2px transparent !important;
+    background-image: linear-gradient(#1a1a1a, #1a1a1a), linear-gradient(to right, #00d1ff, #7244ff 90%, #7244ff) !important;
+    background-origin: border-box !important;
+    background-clip: padding-box, border-box !important;
+    border-radius: 6px !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+#urlbar[open] > #urlbar-background {
 	color: #DDDDDD !important;
     border: solid 2px transparent !important;
-    background-image: linear-gradient(#1a1a1a, #1a1a1a), radial-gradient(circle at top left, #00ddff, #8500ff) !important;
+    background-image: linear-gradient(#151515, #151515), linear-gradient(to right, #00d1ff, #7244ff 90%, #7244ff) !important;
     background-origin: border-box !important;
     background-clip: padding-box, border-box !important;
     border-radius: 6px !important;

@@ -34,7 +34,14 @@
 
 /* Stop button */
 #stop-button .toolbarbutton-icon  {
-	list-style-image: url(icons/window-close-x.svg) !important;
+	list-style-image: url(icons/stop.svg) !important;
+}
+
+/* All tabs button */
+#alltabs-button .toolbarbutton-icon {
+	list-style-image: url(icons/pan-down.svg) !important;
+	margin-left: -7px !important;
+	margin-top: -7px !important;
 }
 
 /* Menu button */
@@ -105,17 +112,7 @@
 	width: 17px !important;
 	height: 17px !important;
 	list-style-image: url(icons/downloads.svg) !important;
-	/*margin-top: 1px !important;*/
-}
-
-/* #tracking-protection-icon-container, #tracking-protection-icon-box:not([hasException])[active] {
-	fill: #8500ff !important;
-	animation: none !important;
-} */
-
-/* ########### Extenions menu ########### */
-#unified-extensions-view {
-  --uei-icon-size: 22px !important;
+	margin-top: 1px !important;
 }
 
 /* ##### Context Menu icons ##### */
@@ -140,10 +137,23 @@
 	width: 32px !important;
 }
 
+/* context menu stop button */
+#context-stop .menu-iconic-icon {
+list-style-image: url(icons/stop.svg) !important;
+height: 32px !important;
+width: 32px !important;
+}
+
 /* context menu bookmark button */
 #context-bookmarkpage .menu-iconic-icon {
-	list-style-image: url(icons/bookmark.svg) !important;
+	list-style-image: url(icons/bookmark-star.svg) !important;
 	height: 32px !important;
 	width: 32px !important;
+}
+
+#context-bookmarkpage:is([starred="true"]) .menu-iconic-icon {
+list-style-image: url(icons/bookmark.svg) !important;
+height: 32px !important;
+width: 32px !important;
 }
 

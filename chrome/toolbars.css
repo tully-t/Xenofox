@@ -1,35 +1,25 @@
-@namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
+/* ########### Toolbar theme ########### */
 :root {
 --lwt-accent-color: rgb(26, 26, 26);
 --chrome-content-separator-color: transparent;
 --panel-separator-color: transparent;
+--toolbar-bgcolor: #1a1a1a !important;
+/*--toolbarbutton-outer-padding: 0px !important;*/
 }
-
-#sidebar-splitter {
-    color: #1a1a1a !important;
-    border-color: #1a1a1a !important;
-}
-
-/* status panel in lower left dark theme */
-#statuspanel-label{
-  background-color: #1a1a1a !important;
-  color: #bbbbbb !important;
-  border-color: transparent !important;
-}
-
-/* ########### toolbar theme ########### */
 
 #nav-bar {
     background-color: #1a1a1a !important;
     border: none !important;
+    padding-bottom: 1px !important;
     box-shadow: none !important;
 }
 
 #PersonalToolbar {
     background-color: #1a1a1a !important;
-    border-color: none !important;
     border-bottom: none !important;
+    padding-inline-start: 3px !important;
+    padding-inline-end: 3px !important;
 }
 
 #navigator-toolbox, #navigator-toolbox-background {
@@ -40,10 +30,10 @@
 
 /*place toolbar buttons at edge of window */
 #nav-bar-customization-target > :is(toolbarbutton, toolbaritem):first-child {
-    padding-inline-start: 4px !important;
+    padding-inline-start: 1px !important;
   }
 #nav-bar-customization-target > :is(toolbarbutton, toolbaritem):last-child {
-    padding-inline-end: 4px !important;
+    padding-inline-end: 1px !important;
   }
 
 /* space below the titlebar, possibly helpful for SSD/Aurorae window decorations other than Xeno */
@@ -72,7 +62,8 @@
     color: #DDDDDD !important;
     background: transparent !important;
     border: solid 2px transparent !important;
-    background-image: linear-gradient(#1a1a1a, #1a1a1a), radial-gradient(circle at top left, #00ddff, #8500ff) !important;
+    background-image: linear-gradient(#1a1a1a, #1a1a1a), linear-gradient(to right, #00d1ff, #00d1ff 5%, #7244ff 90%, #7244ff) !important;
+    /*background-image: linear-gradient(#1a1a1a, #1a1a1a), radial-gradient(circle at top left, #00ddee, #7244ff) !important;*/
     background-origin: border-box !important;
     background-clip: padding-box, border-box !important;
     border-radius: 6px !important;
@@ -80,11 +71,7 @@
     outline: none !important;
 }
 
-/* ##### Hamburger menu ##### */
-:root {
-    --panel-separator-zap-gradient: linear-gradient(90deg, #00ddff 0%, #8500ff 90%, #8500ff 100%) !important;
-    --toolbarbutton-outer-padding: 0 !important;
-}
+/* ##### Hamburger menu button ##### */
 
 /* position at edge of window */
 #PanelUI-menu-button {
@@ -111,51 +98,78 @@
 
 /* ########### bookmark bar theme ########### */
 
-#PlacesToolbar .bookmark-item:not(subviewbutton):hover {
-	color: #DDDDDD !important;
-    background-color: rgba(170, 170, 172, 0.2) !important;
+#PlacesToolbar toolbarbutton .bookmark-item:not(menu, menuitem) {
+    border: solid 2px transparent !important;
+    /*border-radius: 4px !important;*/
+    background-clip: padding-box !important;
+    padding: 4px 6px !important;
+    outline: none !important;
 }
 
-#PlacesToolbar .bookmark-item:not(subviewbutton) {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+#PlacesToolbar toolbarbutton .bookmark-item:not(menuitem, menu):hover {
+	color: #DDDDDD !important;
+    /*border-radius: 4px !important;*/
+    border: solid 2px transparent !important;
+    background-clip: padding-box !important;
+}
+
+#PlacesToolbar toolbarbutton.bookmark-item[open] {
+    color: #DDDDDD !important;
+    /*background: transparent !important;*/
+    border: solid 2px transparent !important;
+    background-image: linear-gradient(#1a1a1a, #1a1a1a), linear-gradient(to right, #00d1ff, #7244ff 90%, #7244ff) !important;
+    background-origin: border-box !important;
+    background-clip: padding-box, border-box !important;
+    /*border-radius: 6px !important;*/
 }
 
 /* bookmark chevron */
-#PlacesToolbar .toolbarbutton-1 .toolbarbutton-icon {
+#PlacesChevron {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+#PlacesChevron:hover {
+    color: #DDDDDD !important;
+}
+
+#PlacesChevron .toolbarbutton-icon {
     padding:  3px !important; /* to prevent shrinking */
-    width: 26px !important;
-	height: 26px !important;
+    width: 30px !important;
+    height: 30px !important;
 }
 
-#PlacesToolbar .toolbarbutton-1 {
-	margin: 0 !important;
-}
-
-#PlacesToolbar .toolbarbutton-1:is([open]) > .toolbarbutton-icon {
+#PlacesChevron[open] .toolbarbutton-icon {
     padding: 3px !important;
+ }
+
+/*#PlacesToolbar .toolbarbutton-1:is([open]) > .toolbarbutton-icon {
+    padding: 6px !important;
+}*/
+
+/* Fix "Other Bookmarks" width for wide fonts */
+#OtherBookmarks {
+    max-width: 14em !important;
 }
 
 /* bookmarks toolbar */
 #PersonalToolbar {
-	min-height: 32px !important; /* correction for 'show only on new tab' */
-	margin: -1px 0 0 0 !important; /* position at window edge like tab bar and toolbar */
-	padding-bottom: 2px !important;
-}
-
-#PlacesToolbar .bookmark-item:is([open]):not(subviewbutton) {
-    color: #DDDDDD !important;
-    background: transparent !important;
-    border: solid 2px transparent !important;
-    background-image: linear-gradient(#1a1a1a, #1a1a1a), radial-gradient(circle at top left, #00ddff, #8500ff) !important;
-    background-origin: border-box !important;
-    background-clip: padding-box, border-box !important;
-    border-radius: 6px !important;
-    box-shadow: none !important;
-    outline: none !important;
+    min-height: 36px !important; /* to combat flicker for 'show only on new tab' */
+    /*visibility: visible;*/ /* to combat flicker for 'show only on new tab' */
+	height: 36px !important;
+	margin: -1px 0 4px 0 !important; /* shorten & position at window edge like tab bar and toolbar */
 }
 
 /* the gradient on warnings like 'you must log in to this network...' */
 .container.infobar::before {
-    background-image: linear-gradient(0deg, #8500ff 0%, #8500ff 10%, #00ddff 100%) !important;
+    background-image: linear-gradient(0deg, #7244ff 0%, #7244ff 10%, #00d1ff 100%) !important;
   }
+
+/* Toolbar customization page */
+#customization-content-container, #customization-footer {
+    background-color: #1a1a1a !important;
+}
+
+#customization-footer {
+    border-top: #1a1a1a !important;
+}
