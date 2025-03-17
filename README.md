@@ -132,7 +132,7 @@ Mac:
 
 - In userChrome.css, comment out comment out the "rounded-corners-web-pages.css" line. For example:
 ```
-@import url(hide-tracking-protection.css); -> /*@import url(hide-tracking-protection.css);*/
+@import url(rounded-corners-web-pages.css); -> /*@import url(rounded-corners-web-pages.css);*/
 ```
 
 ### Hidden Firefox components
@@ -140,7 +140,7 @@ Mac:
 - By default, this theme will hide the Tracking Protection icon from the URL bar. Tracking Protection is still working! I've never needed to interfere with it, and the icon is _always_ there otherwise. If you would feel better with it visible:
     - Comment out the `hide-tracking-protection.css` line userChrome.css. For example:
     ```
-    @import url(rounded-corners-web-pages.css); -> /*@import url(rounded-corners-web-pages.css);*/
+    @import url(hide-tracking-protection.css); -> /*@import url(hide-tracking-protection.css);*/
     ```
     - Restart Firefox to see changes
 
