@@ -95,7 +95,7 @@ order: 3 !important;
   --button-border-radius: var(--border-radius-circle) !important;
   color: transparent !important;
   position: absolute;
-  top: 9px;
+  top: 10px;
   margin-inline-start: 10px !important;
   margin-inline-end: 4px !important;
 }
