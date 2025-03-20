@@ -36,6 +36,14 @@
 		--newtab-primary-element-text-color: #aaaaac;
   }
 
+    .logo-and-wordmark-wrapper {
+		display: none !important;
+	}
+
+	/*.top-site-outer .top-site-inner {
+		padding: 20px
+	}*/
+
     .top-site-inner .tile {
 		background: rgba(170, 170, 172, 0.2) !important;
 	}

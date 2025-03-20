@@ -75,22 +75,34 @@ order: 3 !important;
 /* Now Playing icon for tabs playing media */
 
 /* keep the site favicon in its usual position instead of being displaced by the speaker icon */
-.tab-icon-stack:is([soundplaying], [muted], [activemedia-blocked]) > .tab-icon-image {
+/*.tab-icon-stack:is([soundplaying], [muted], [activemedia-blocked]) > .tab-icon-image {
 	position: relative;
-}
+}*/
 
 /* Hide the PLAYING, MUTED, etc. labels on audio tabs, and the default media button */
 .tab-secondary-label:is([soundplaying], [muted], [activemedia-blocked], [pictureinpicture]) {
     display: none !important;
 }
 
-.tab-audio-icon {
-  display: none !important;
+.tab-audio-button {
+  background-image: url(icons/audio.svg) !important;
+  background-repeat: no-repeat !important;
+  background-size: 12px 12px !important;
+
+  --button-size-icon-small: 16px !important;
+  --button-min-height-small: var(--button-size-icon-small) !important;
+  --button-background-color-ghost: transparent !important;
+  --button-border-radius: var(--border-radius-circle) !important;
+  color: transparent !important;
+  position: absolute;
+  top: 9px;
+  margin-inline-start: 10px !important;
+  margin-inline-end: 4px !important;
 }
 
 /* make the speaker icon always appear if the tab is playing (not only on hover) */
 .tab-icon-overlay:not([crashed]):is([soundplaying], [muted], [activemedia-blocked], [sharing]) {
-	/* Color */
+	visibility: visible !important;
     color: currentColor !important;
     fill: #dddddd !important;
     stroke: transparent !important;
@@ -99,18 +111,19 @@ order: 3 !important;
     fill-opacity: 0.9 !important;
     opacity: 1 !important;
     list-style-image: url(icons/audio.svg) !important;
-
-	/* Position */
-    /*z-index: 1 !important; */
-
-    /* Shape
-    padding: 1.5px !important;
-    width: 22px !important;
-    height: 22px !important; */
-
-    /* Animation */
     transition: 0.1s var(--animation-easing-function);
+    z-index: 1 !important;
 }
+
+/* Position */
+/*z-index: 1 !important; */
+
+/* Shape
+ p adding: 1.5px *!important;
+ width: 22px !important;
+ height: 22px !important; */
+
+/* Animation */
 
 
 /* reposition the tab label and speaker icon */
@@ -120,7 +133,7 @@ order: 3 !important;
     padding-right: 0 !important;
 }
 
-/* Replace favicon with close button on selected tab on hover */
+/* ##### Replace favicon with close button on selected tab on hover ##### */
 
 /* First, hide the close button when not selected */
 .tabbrowser-tab .tab-close-button {
@@ -129,10 +142,12 @@ order: 3 !important;
     width: 24px !important;
     height: 24px !important;
     margin-inline-start: -3px !important;
+    margin-inline-end: 4px !important;
 }
 
 /* Then, show tab close button in place of favicon when cursor is over the selected tab */
-.tabbrowser-tab[selected]:not([pinned]):hover .tab-icon-image, .tabbrowser-tab[selected]:not([pinned]):hover .tab-icon-overlay, .tabbrowser-tab[selected]:not([pinned]):hover .tab-throbber {
+/* first was previously .tabbrowser-tab[selected]:not([pinned]):hover .tab-icon-image */
+.tabbrowser-tab[selected]:not([pinned]):hover .tab-icon-stack, .tabbrowser-tab[selected]:not([pinned]):hover .tab-icon-overlay, .tabbrowser-tab[selected]:not([pinned]):hover .tab-throbber, .tabbrowser-tab[selected]:not([pinned]):hover .tab-audio-button {
     visibility: collapse !important;
     display: none;
 }
@@ -145,6 +160,7 @@ order: 3 !important;
     /*align-items: center;*/
     z-index: 1;
     /*margin-inline: -3px 0 -3px 0 !important;*/
+    /*margin-inline-end: 25px !important;*/
 
 }
 
@@ -168,10 +184,15 @@ order: 3 !important;
 .tabbrowser-tab:not([image]):hover .tab-close-button{ visibility: visible; z-index: 1;  }
 .tabbrowser-tab:not([image]):hover .tab-close-button{ margin-inline-end: 0 !important; }
 
-/* Center the the text of the tab label */
+/* ##### Center the the text of the tab label ##### */
 .tab-label-container {
   display: grid !important;
   align-content: center !important;
+}
+
+/*  HACK fix for Firefox 136+ */ /* Comment out for Firefox 135 & below */
+.tabbrowser-tab[selected]:not([pinned]):hover .tab-label-container {
+  margin-inline-start: 25px !important;
 }
 
 .tab-secondary-label {

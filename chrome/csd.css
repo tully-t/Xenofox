@@ -87,13 +87,6 @@
 
         .titlebar-buttonbox-container {
             visibility: visible !important;
-        }
-    }
-
-    :root:is([tabsintitlebar]) {
-
-        .titlebar-buttonbox-container {
-            visibility: visible !important;
             display: flex !important;
             position: absolute !important;
             top: 8px !important; /* GNOME users with an alternative theme may want to adjust this value */
@@ -101,10 +94,15 @@
             right: unset !important; /* To have window controls on the right, comment out this line */
         }
 
+        /* remove extra window controls in menubar */
+        #TabsToolbar .titlebar-buttonbox-container {
+        display: none !important;
+        }
+
         /* shortens the toolbar to accommodate the absolute positioning of the csd window controls */
         #nav-bar {
-            padding-left: 110px !important; /* GNOME users with an alternative theme may want to adjust this value. To have window controls on the right, replace "padding-left" with "padding-right" */
-            padding-right: 0px !important; /* GNOME users with an alternative theme may want to adjust this value. To have window controls on the right, replace "padding-right" with "padding-left" or comment out this line */
+        padding-left: 110px !important; /* GNOME users with an alternative theme may want to adjust this value. To have window controls on the right, replace "padding-left" with "padding-right" */
+        padding-right: 0px !important; /* GNOME users with an alternative theme may want to adjust this value. To have window controls on the right, replace "padding-right" with "padding-left" or comment out this line */
         }
 
         /* window control button order */
@@ -119,5 +117,7 @@
         .titlebar-close {
             order: 0 !important; /* To have window controls on the right, change this from "0" to "2" */
         }
+
     }
+
 }
