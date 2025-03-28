@@ -40,8 +40,17 @@
 		display: none !important;
 	}
 
-	/*.top-site-outer .top-site-inner {
-		padding: 20px
+	/*.top-site-outer {
+		margin-block-end: 32px !important;
+	}*/
+
+	/*.discovery-stream.ds-layout {
+		--gridColumnGap: 48px;
+		--gridRowGap: 24px !important;
+	}*/
+
+	/*.top-sites-list {
+		grid-template-columns: repeat(8, 1fr) !important;
 	}*/
 
     .top-site-inner .tile {
@@ -132,8 +141,13 @@
 		background: #1a1a1ada !important;
 	}
 
+	.personalizeButtonWrapper {
+		position: absolute;
+		top: 24px !important;
+	}
+
     .personalize-button {
-      fill: #BBBBBB !important;
+		fill: #BBBBBB !important;
     }
 
 	.personalize-button:hover {
